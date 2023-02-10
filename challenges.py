@@ -140,9 +140,34 @@ def romanToInt(self, s: str) -> int:
 
 #==========================================================================#
 
+'''
 
+= Find the unique string =
+
+There is an array of strings. All strings contains similar letters except one. Try to find it!
+
+find_uniq([ 'Aa', 'aaa', 'aaaaa', 'BbBb', 'Aaaa', 'AaAaAa', 'a' ]) # => 'BbBb'
+find_uniq([ 'abc', 'acb', 'bac', 'foo', 'bca', 'cab', 'cba' ]) # => 'foo'
+Strings may contain spaces. Spaces are not significant, only non-spaces symbols matters. E.g. string that contains only spaces is like empty string.
+
+It’s guaranteed that array contains more than 2 strings.
+
+'''
+
+def find_uniq(arr):
+    for i, s in enumerate(arr):
+        act_set = set(s.lower())
+        prev_set = set(arr[i - 1].lower())
+        pre_prev_set = set(arr[i - 2].lower())
+        if act_set != prev_set and act_set != pre_prev_set: return arr[i]
 
 #==========================================================================#
+
+'''
+
+
+
+'''
 
 
 
